@@ -1,0 +1,391 @@
+.modal_film_card {
+  width: 280px;
+  padding: 48px 20px 41px 20px;
+  overflow: auto;
+  max-height: calc(100vh - 55px);
+  border: 1px solid $accent-color;
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 562px;
+    padding: 42px 30px 41px 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 814px;
+    padding: 40px 16px 40px 16px;
+  }
+  &[data-theme='dark'] {
+    background-color: #191a19;
+    color: #fff;
+  }
+}
+
+.modal_film_card::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.modal__film-titel {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  @media screen and (min-width: 1024px) {
+    font-size: 30px;
+    line-height: 1.17;
+  }
+}
+
+.modal__wrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.modal__info-wrapper {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    max-width: 264px;
+    max-width: 50%;
+    margin-left: 32px;
+  }
+  @media screen and (min-width: 1024px) {
+    position: relative;
+    // max-width: 396px;
+    max-width: 50%;
+    margin-left: 32px;
+  }
+}
+.modal__image {
+  @media screen and (min-width: 1024px) {
+    width: 375px;
+    height: 478px;
+  }
+}
+
+.modal__image-wrapper {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    max-width: 50%;
+  }
+}
+
+.modal__film-votes {
+  display: inline-flex;
+}
+
+tbody {
+  display: block;
+  margin-bottom: 20px;
+}
+
+tr {
+  display: flex;
+  margin-bottom: 10px;
+}
+.modal__param-titel {
+  color: #8c8c8c;
+  width: 105px;
+  @media screen and (min-width: 1024px) {
+    width: 150px;
+  }
+  &[data-theme='dark'] {
+    color: rgb(181, 177, 177);
+  }
+}
+.modal__param-value {
+  width: 135px;
+  @media screen and (min-width: 1024px) {
+    width: 246px;
+  }
+}
+
+.film__owervier {
+  margin-bottom: 20px;
+}
+
+.param {
+  &__value-vote {
+    margin-right: 3px;
+    border-radius: 5px;
+    width: 36px;
+    height: 16px;
+    line-height: 1.17;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: $rating-color;
+    color: $white-text-color;
+  }
+  &__value-votes {
+    margin-left: 3px;
+    border-radius: 5px;
+    width: 36px;
+    height: 16px;
+    line-height: 1.17;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: $footer-background-color;
+    color: $primary-text-color;
+  }
+}
+
+.modal__buttons {
+  display: flex;
+}
+
+.modal__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 113px;
+  height: 41px;
+  padding: 14px 7px 12px 7px;
+  line-height: 1.33;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 125px;
+    height: 44px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
+
+  &:hover {
+    border: 0px;
+    outline: 0;
+    background-color: $white-text-color;
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.3);
+  }
+
+  &.watched,
+  &.queue {
+    color: $white-text-color;
+    background-color: $rating-color;
+    border: 1px solid $rating-color;
+  }
+
+  &.checked {
+    color: $primary-text-color;
+    background-color: $footer-background-color;
+    border: 1px solid $primary-text-color;
+  }
+
+  &.watched:focus,
+  &.queue:focus {
+    border: 2px solid $rating-color;
+  }
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.close_modal_butt:hover,
+.close_modal_butt:focus {
+  background-color: $accent-color;
+  border-radius: 50%;
+  outline: 1px solid $primary-text-color;
+}
+
+.modal__arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  @media screen and (min-width: 768px) {
+    justify-content: flex-end;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-top: 0;
+    position: absolute;
+    right: 25px;
+    bottom: 1px;
+  }
+}
+
+.modal__arrow-btn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+
+  &:hover,
+  &:active {
+    background-color: #fb8332;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+}
+
+.modal__arrow-image-left {
+  transform: rotate(135deg);
+  border: solid $white-text-color;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.modal__arrow-image-right {
+  transform: rotate(-45deg);
+  border: solid $white-text-color;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.open-trailer {
+  background: $accent-color;
+  box-sizing: border-box;
+  border: 0;
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: $accent-color;
+  animation: grow 1s infinite;
+  cursor: pointer;
+
+  &__icon::after {
+    content: '';
+    background-image: url('../images/svg/play-button.svg');
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover .open-trailer__icon::after {
+    filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: none;
+  }
+}
+
+.modal-trailer__backdrop {
+  z-index: 5;
+  position: fixed;
+  padding: 40px 5px 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+  opacity: 1;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @media (max-width: 768px) {
+    .modal-trailer__backdrop {
+      padding: 20px;
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .modal-trailer__backdrop {
+      padding: 10px;
+      max-width: 95%;
+      max-height: 95%;
+    }
+
+    .iframe {
+      max-width: 280px; /* Ensure the video doesn't exceed the modal's width */
+      height: 500px; /* Allow the video's height to adjust proportionally */
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; /* Adjust this value to position the button vertically */
+  right: 10px; /* Adjust this value to position the button horizontally */
+  width: 30px; /* Adjust the size of the button */
+  height: 30px; /* Adjust the size of the button */
+  border-radius: 50%; /* Make it a circle */
+  background-color: $white-text-color; /* Semi-transparent background */
+  color: black; /* Text color */
+  font-size: 20px; /* Adjust the font size to control the size of the "x" */
+  font-weight: bold; /* Bold font */
+  text-align: center; /* Center the "x" horizontally */
+  line-height: 30px; /* Center the "x" vertically */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border: 0;
+}
+.close-btn::after {
+  content: ""; /* Required for the pseudo-element */
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 20px; /* Adjust the size of the icon */
+  height: 20px; /* Adjust the size of the icon */
+  background-image: url("../images/svg/close.svg"); /* Path to your SVG icon */
+  background-size: cover;
+}
+
+.close-btn:hover {
+  background-color: $accent-color; /* Adjust brightness on hover */
+  fill: $accent-color;
+}
+
+.modal-trailer__wrapper {
+  position: relative;
+}
+
+@keyframes grow {
+  from {
+    box-shadow: 0px 0px 1em $accent-color;
+  }
+  to {
+    box-shadow: 0px 0px 3em $accent-color;
+  }
+}
+
